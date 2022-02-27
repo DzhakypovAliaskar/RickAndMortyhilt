@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/RickAndMorty2/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/RickAndMorty2/app/src/main/res/layout/fragment_character.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/Admin/AndroidStudioProjects/RickAndMorty2/app/src/main/res/layout/item_character.xml" value="0.536" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/RickAndMorty2/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/RickAndMorty2/app/src/main/res/layout/fragment_character.xml" value="0.176" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/RickAndMorty2/app/src/main/res/layout/fragment_episodes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/RickAndMorty2/app/src/main/res/layout/fragment_location.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/RickAndMorty2/app/src/main/res/layout/item_character.xml" value="0.4" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/RickAndMorty2/app/src/main/res/layout/item_episodes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/RickAndMorty2/app/src/main/res/layout/item_location.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/RickAndMorty2/app/src/main/res/menu/bottom_navigation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/RickAndMorty2/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

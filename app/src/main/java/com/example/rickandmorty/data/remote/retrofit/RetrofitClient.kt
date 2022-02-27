@@ -1,24 +1,35 @@
 package com.example.rickandmorty.data.remote.retrofit
 
-import com.example.rickandmorty.data.remote.api.CharacterApi
+import com.example.rickandmorty.data.remote.apiservices.CharacterApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-object RetrofitClient {
+class RetrofitClient {
 
-    private val retrofit by lazy {
-        Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://rickandmortyapi.com/api/")
-            .build()
+    private val provideClient: OkHttpClient = OkHttpClient()
+        .newBuilder()
+        .connectTimeout(20, TimeUnit.SECONDS)
+        .readTimeout(20, TimeUnit.SECONDS)
+        .writeTimeout(20, TimeUnit.SECONDS)
+        .addInterceptor(provideLoginInterceptor())
+        .build()
+
+    private fun provideLoginInterceptor(): HttpLoggingInterceptor {
+        return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
+    private val provideRetrofit = Retrofit.Builder()
+        .baseUrl("https://rickandmortyapi.com/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .client(provideClient)
+        .build()
 
-     val characterApi: CharacterApi by lazy {
-        retrofit.create(CharacterApi::class.java)
-    }
+
+    fun providesCharacterApi(): CharacterApi =
+        provideRetrofit.create(CharacterApi::class.java)
+
 
 }

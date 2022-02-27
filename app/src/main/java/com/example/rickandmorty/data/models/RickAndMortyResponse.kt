@@ -1,33 +1,12 @@
 package com.example.rickandmorty.data.models
 
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class RickAndMortyResponse {
-
+data class RickAndMortyResponse<T>(
 
     @SerializedName("info")
-    @Expose
-    private var info: Info? = null
+    val info: Info,
 
     @SerializedName("results")
-    @Expose
-    private var characterModels: List<CharacterModel?>? = null
-
-    fun getInfo(): Info? {
-        return info
-    }
-
-    fun setInfo(info: Info?) {
-        this.info = info
-    }
-
-    fun getResults(): List<CharacterModel?>? {
-        return characterModels
-    }
-
-    fun setResults(characterModels: List<CharacterModel?>?) {
-        this.characterModels = characterModels
-    }
-
-}
+    val results: ArrayList<T>
+)

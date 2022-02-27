@@ -3,7 +3,7 @@ package com.example.rickandmorty.data.models
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class Origin {
+class EpisodeMdl {
 
     @SerializedName("name")
     @Expose
