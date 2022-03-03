@@ -4,18 +4,18 @@ import com.example.rickandmorty.common.base.IBaseDiffModel
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class Location(
+data class Episodes(
 
     @SerializedName("id")
     override val id: Int,
 
     @SerializedName("name")
     @Expose
-    val name: String? = null,
+    var name: String? = null,
 
-    @SerializedName("type")
+    @SerializedName("episodes")
     @Expose
-    val type: String? = null,
+    val episodes: String? = null,
 
     @SerializedName("url")
     @Expose

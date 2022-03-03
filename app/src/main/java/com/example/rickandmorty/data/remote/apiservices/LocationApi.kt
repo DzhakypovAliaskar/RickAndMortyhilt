@@ -1,21 +1,20 @@
 package com.example.rickandmorty.data.remote.apiservices
 
-import com.example.rickandmorty.data.models.Episodes
+import com.example.rickandmorty.data.models.Location
 import com.example.rickandmorty.data.models.RickAndMortyResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface EpisodeApi {
+interface LocationApi {
 
-    @GET("api/episode")
-    suspend fun getEpisode(
+    @GET("api/location")
+    suspend fun getLocation(
         @Query("page") page: Int
-    ): RickAndMortyResponse<Episodes>
+    ): RickAndMortyResponse<Location>
 
-
-    @GET("api/episode/{id}")
+    @GET("api/location/{id}")
     suspend fun getId(@Path("id") id: Int
-    ): Episodes
+    ): Location
 
 }

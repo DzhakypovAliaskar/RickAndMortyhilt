@@ -1,6 +1,8 @@
 package com.example.rickandmorty.data.remote.retrofit
 
 import com.example.rickandmorty.data.remote.apiservices.CharacterApi
+import com.example.rickandmorty.data.remote.apiservices.EpisodeApi
+import com.example.rickandmorty.data.remote.apiservices.LocationApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -30,6 +32,12 @@ class RetrofitClient {
 
     fun providesCharacterApi(): CharacterApi =
         provideRetrofit.create(CharacterApi::class.java)
+
+    fun providesLocationApi(): LocationApi =
+        provideRetrofit.create(LocationApi::class.java)
+
+    fun providesEpisodesApi(): EpisodeApi =
+        provideRetrofit.create(EpisodeApi::class.java)
 
 
 }

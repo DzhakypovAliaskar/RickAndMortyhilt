@@ -1,33 +1,38 @@
 package com.example.rickandmorty.ui.fragment
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.FragmentCharacterBinding
+import com.example.rickandmorty.databinding.FragmentEpisodesBinding
+import com.example.rickandmorty.databinding.FragmentLocationBinding
 import com.example.rickandmorty.ui.adapter.CharacterPagingAdapter
+import com.example.rickandmorty.ui.adapter.LocationPagingAdapter
 import com.example.rickandmorty.ui.adapter.paging.CommonLoadStateAdapter
 import com.example.rickandmorty.ui.viewmodel.CharacterViewModel
+import com.example.rickandmorty.ui.viewmodel.LocationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CharacterFragment : Fragment(R.layout.fragment_character) {
+class LocationFragment : Fragment(R.layout.fragment_location) {
 
-    private val viewModel: CharacterViewModel by viewModels()
-    private val characterAdapter : CharacterPagingAdapter = CharacterPagingAdapter()
-    private lateinit var binding: FragmentCharacterBinding
+    private lateinit var binding: FragmentLocationBinding
+    private val locationAdapter : LocationPagingAdapter = LocationPagingAdapter()
+    private val viewModel: LocationViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentCharacterBinding.inflate(inflater, container, false)
+    ): View? {
+        binding = FragmentLocationBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -38,20 +43,21 @@ class CharacterFragment : Fragment(R.layout.fragment_character) {
     }
 
     private fun setupRequests() {
-        viewModel.getCharacters().observe(this@CharacterFragment){
+        viewModel.getLocations().observe(this){
             lifecycleScope.launchWhenStarted {
-                characterAdapter.submitData(it)
+                locationAdapter.submitData(it)
             }
         }
     }
 
-    private fun setupRecycler() = with(binding.characterRecycler){
-        adapter = characterAdapter.withLoadStateFooter(CommonLoadStateAdapter{
-            characterAdapter.retry()
-            characterAdapter.refresh()
+    private fun setupRecycler()  = with(binding.locationRecycler){
+        adapter = locationAdapter.withLoadStateFooter(CommonLoadStateAdapter{
+            locationAdapter.retry()
+            locationAdapter.refresh()
         })
-        characterAdapter.addLoadStateListener { loadStates->
+        locationAdapter.addLoadStateListener { loadStates->
             this.isVisible = loadStates.refresh is LoadState.NotLoading
         }
     }
+
 }

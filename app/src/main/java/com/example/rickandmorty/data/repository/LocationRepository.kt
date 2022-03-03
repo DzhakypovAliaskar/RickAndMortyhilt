@@ -6,32 +6,28 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.liveData
 import com.example.rickandmorty.common.base.BaseRepository
-import com.example.rickandmorty.data.models.Character
-import com.example.rickandmorty.data.remote.apiservices.CharacterApi
-import com.example.rickandmorty.data.remote.pagingsource.CharacterPagingSource
-import java.lang.Exception
+import com.example.rickandmorty.data.models.Location
+import com.example.rickandmorty.data.remote.apiservices.LocationApi
+import com.example.rickandmorty.data.remote.pagingsource.LocationPagingSource
 import javax.inject.Inject
 
-
-class CharacterRepository @Inject constructor(
-    private val service: CharacterApi
+class LocationRepository @Inject constructor(
+    private val service: LocationApi
 ) : BaseRepository(){
 
+//    fun getLocation(page : Int) = doRequest {
+//        service.getLocation(page)
+//    }
 
-    fun getCharacter(page: Int) = doRequest {
-        service.getCharacter(page)
-    }
-
-    fun getCharacters(): LiveData<PagingData<Character>> {
+    fun getLocations(): LiveData<PagingData<Location>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 10,
                 prefetchDistance = 2
             ),
             pagingSourceFactory = {
-                CharacterPagingSource(service)
+                LocationPagingSource(service)
             }
         ).liveData
     }
-
 }

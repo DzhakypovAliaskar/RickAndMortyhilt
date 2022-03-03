@@ -1,11 +1,12 @@
 package com.example.rickandmorty.data.models
 
+import com.example.rickandmorty.common.base.IBaseDiffModel
 import com.google.gson.annotations.SerializedName
 
 data class Character(
 
     @SerializedName("id")
-    val id: Int,
+    override val id: Int,
 
     @SerializedName("status")
     val status: String,
@@ -15,5 +16,4 @@ data class Character(
 
     @SerializedName("image")
     val image: String
-
-)
+): IBaseDiffModel
