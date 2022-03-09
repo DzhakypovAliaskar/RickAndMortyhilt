@@ -6,7 +6,6 @@ interface IBaseDiffModel {
     val id: Int
     override fun equals(other: Any?): Boolean
 }
-
 class BaseDiffUtilItemCallback<T : IBaseDiffModel> : DiffUtil.ItemCallback<T>() {
 
     override fun areItemsTheSame(oldItem: T, newItem: T): Boolean {

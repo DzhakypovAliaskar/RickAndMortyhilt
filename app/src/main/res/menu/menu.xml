@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/character_nav"
+        android:id="@+id/characterFragment"
         android:title="Character"/>
     <item
-        android:id="@+id/location_nav"
+        android:id="@+id/locationFragment"
         android:title="Location"/>
     <item
-        android:id="@+id/episodes_nav"
+        android:id="@+id/episodesFragment"
         android:title="Episodes"/>
 
 </menu>

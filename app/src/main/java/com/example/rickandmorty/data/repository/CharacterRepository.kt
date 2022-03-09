@@ -6,14 +6,13 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.liveData
 import com.example.rickandmorty.common.base.BaseRepository
-import com.example.rickandmorty.data.models.Character
 import com.example.rickandmorty.data.remote.apiservices.CharacterApi
+import com.example.rickandmorty.data.remote.models.Character
 import com.example.rickandmorty.data.remote.pagingsource.CharacterPagingSource
-import java.lang.Exception
 import javax.inject.Inject
 
 
-class CharacterRepository @Inject constructor(
+class CharacterRepository(
     private val service: CharacterApi
 ) : BaseRepository(){
 

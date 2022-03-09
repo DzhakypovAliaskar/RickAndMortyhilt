@@ -1,4 +1,4 @@
-package com.example.rickandmorty.data.models
+package com.example.rickandmorty.data.remote.models
 
 import com.google.gson.annotations.SerializedName
 
@@ -10,3 +10,4 @@ data class RickAndMortyResponse<T>(
     @SerializedName("results")
     val results: ArrayList<T>
 )
+

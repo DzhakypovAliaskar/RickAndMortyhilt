@@ -1,4 +1,4 @@
-package com.example.rickandmorty.ui.fragment
+package com.example.rickandmorty.ui.fragment.character
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,13 +13,12 @@ import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.FragmentCharacterBinding
 import com.example.rickandmorty.ui.adapter.CharacterPagingAdapter
 import com.example.rickandmorty.ui.adapter.paging.CommonLoadStateAdapter
-import com.example.rickandmorty.ui.viewmodel.CharacterViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-@AndroidEntryPoint
 class CharacterFragment : Fragment(R.layout.fragment_character) {
 
-    private val viewModel: CharacterViewModel by viewModels()
+    private val viewModel: CharacterViewModel by viewModel()
     private val characterAdapter : CharacterPagingAdapter = CharacterPagingAdapter()
     private lateinit var binding: FragmentCharacterBinding
 
@@ -38,7 +37,7 @@ class CharacterFragment : Fragment(R.layout.fragment_character) {
     }
 
     private fun setupRequests() {
-        viewModel.getCharacters().observe(this@CharacterFragment){
+        viewModel.getCharacters().observe(this){
             lifecycleScope.launchWhenStarted {
                 characterAdapter.submitData(it)
             }
@@ -47,7 +46,6 @@ class CharacterFragment : Fragment(R.layout.fragment_character) {
 
     private fun setupRecycler() = with(binding.characterRecycler){
         adapter = characterAdapter.withLoadStateFooter(CommonLoadStateAdapter{
-            characterAdapter.retry()
             characterAdapter.refresh()
         })
         characterAdapter.addLoadStateListener { loadStates->

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.common.base.BaseDiffUtilItemCallback
-import com.example.rickandmorty.data.models.Location
+import com.example.rickandmorty.data.remote.models.Location
 import com.example.rickandmorty.databinding.ItemLocationBinding
 
 class LocationPagingAdapter(

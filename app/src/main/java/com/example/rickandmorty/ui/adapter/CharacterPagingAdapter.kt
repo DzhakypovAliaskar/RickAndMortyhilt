@@ -6,7 +6,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.rickandmorty.common.base.BaseDiffUtilItemCallback
-import com.example.rickandmorty.data.models.Character
+import com.example.rickandmorty.data.remote.models.Character
 import com.example.rickandmorty.databinding.ItemCharacterBinding
 
 class CharacterPagingAdapter(

@@ -1,7 +1,7 @@
 package com.example.rickandmorty.data.remote.pagingsource
 
 import com.example.rickandmorty.common.base.BasePagingSource
-import com.example.rickandmorty.data.models.Character
+import com.example.rickandmorty.data.remote.models.Character
 import com.example.rickandmorty.data.remote.apiservices.CharacterApi
 
 class CharacterPagingSource(

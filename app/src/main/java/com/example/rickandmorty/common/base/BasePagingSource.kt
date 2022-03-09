@@ -4,9 +4,7 @@ import android.net.Uri
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.bumptech.glide.load.HttpException
-import com.example.rickandmorty.data.models.Character
-import com.example.rickandmorty.data.models.Location
-import com.example.rickandmorty.data.models.RickAndMortyResponse
+import com.example.rickandmorty.data.remote.models.RickAndMortyResponse
 import java.io.IOException
 
 abstract class BasePagingSource <T : Any, U>(

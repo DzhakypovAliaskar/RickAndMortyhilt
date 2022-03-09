@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.common.base.BaseDiffUtilItemCallback
-import com.example.rickandmorty.data.models.Episodes
+import com.example.rickandmorty.data.remote.models.Episodes
 import com.example.rickandmorty.databinding.ItemEpisodesBinding
 
 class EpisodePagingAdapter(

@@ -6,7 +6,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.liveData
 import com.example.rickandmorty.common.base.BaseRepository
-import com.example.rickandmorty.data.models.Location
+import com.example.rickandmorty.data.remote.models.Location
 import com.example.rickandmorty.data.remote.apiservices.LocationApi
 import com.example.rickandmorty.data.remote.pagingsource.LocationPagingSource
 import javax.inject.Inject

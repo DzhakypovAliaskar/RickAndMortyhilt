@@ -53,6 +53,7 @@ dependencies {
 
     //UI components
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // Activity
     def activity_version = "1.4.0"
@@ -114,7 +115,14 @@ dependencies {
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
     //Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-RC3'
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0-RC")
+
+    // Koin
+    def koin_version= "3.1.4"
+    // | for main features for Android
+    implementation "io.insert-koin:koin-android:$koin_version"
 
 
 }

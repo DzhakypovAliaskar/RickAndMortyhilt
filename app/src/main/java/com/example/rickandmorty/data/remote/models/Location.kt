@@ -1,21 +1,21 @@
-package com.example.rickandmorty.data.models
+package com.example.rickandmorty.data.remote.models
 
 import com.example.rickandmorty.common.base.IBaseDiffModel
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class Episodes(
+data class Location(
 
     @SerializedName("id")
     override val id: Int,
 
     @SerializedName("name")
     @Expose
-    var name: String? = null,
+    val name: String? = null,
 
-    @SerializedName("episodes")
+    @SerializedName("type")
     @Expose
-    val episodes: String? = null,
+    val type: String? = null,
 
     @SerializedName("url")
     @Expose

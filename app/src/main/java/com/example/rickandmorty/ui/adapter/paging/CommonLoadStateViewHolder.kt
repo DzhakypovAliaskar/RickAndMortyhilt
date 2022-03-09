@@ -7,7 +7,7 @@ import androidx.paging.LoadState
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.databinding.ItemLoadStateFooterViewBinding
 
-class  CommonLoadStateViewHolder(
+class CommonLoadStateViewHolder(
     private val binding: ItemLoadStateFooterViewBinding,
     retry: () -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
