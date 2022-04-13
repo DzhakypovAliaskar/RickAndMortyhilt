@@ -11,7 +11,6 @@ import com.example.rickandmorty.data.remote.models.Character
 import com.example.rickandmorty.data.remote.pagingsource.CharacterPagingSource
 import javax.inject.Inject
 
-
 class CharacterRepository(
     private val service: CharacterApi
 ) : BaseRepository(){
@@ -32,5 +31,4 @@ class CharacterRepository(
             }
         ).liveData
     }
-
 }

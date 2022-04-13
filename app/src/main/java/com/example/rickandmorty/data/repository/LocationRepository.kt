@@ -15,10 +15,6 @@ class LocationRepository @Inject constructor(
     private val service: LocationApi
 ) : BaseRepository(){
 
-//    fun getLocation(page : Int) = doRequest {
-//        service.getLocation(page)
-//    }
-
     fun getLocations(): LiveData<PagingData<Location>> {
         return Pager(
             config = PagingConfig(

@@ -6,14 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.FragmentCharacterBinding
 import com.example.rickandmorty.ui.adapter.CharacterPagingAdapter
 import com.example.rickandmorty.ui.adapter.paging.CommonLoadStateAdapter
-import dagger.hilt.android.AndroidEntryPoint
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CharacterFragment : Fragment(R.layout.fragment_character) {

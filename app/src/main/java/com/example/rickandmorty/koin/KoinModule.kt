@@ -12,17 +12,18 @@ import org.koin.dsl.module
 
 val remoteModule = module {
     single { RetrofitClient() }
-    single { get<RetrofitClient>().providesCharacterApi() }
     single { get<RetrofitClient>().providesEpisodesApi() }
     single { get<RetrofitClient>().providesLocationApi() }
-}
-val repositoriesModel = module {
-    factory { CharacterRepository(get()) }
-    factory { EpisodeRepository(get()) }
-    factory { LocationRepository(get()) }
+    single { get<RetrofitClient>().providesCharacterApi() }
 }
 val viewModelModule = module {
-    viewModel { CharacterViewModel(get()) }
     viewModel { EpisodeViewModel(get()) }
     viewModel { LocationViewModel(get()) }
+    viewModel { CharacterViewModel(get()) }
 }
+val repositoriesModel = module {
+    factory { LocationRepository(get()) }
+    factory { EpisodeRepository(get()) }
+    factory { CharacterRepository(get()) }
+}
+

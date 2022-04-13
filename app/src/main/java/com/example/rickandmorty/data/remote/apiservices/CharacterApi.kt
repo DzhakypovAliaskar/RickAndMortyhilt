@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface CharacterApi {
+interface   CharacterApi {
 
     @GET("api/character/{id}")
     suspend fun getId(@Path("id") id: Int
