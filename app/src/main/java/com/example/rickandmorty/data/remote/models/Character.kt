@@ -2,6 +2,8 @@ package com.example.rickandmorty.data.remote.models
 
 import com.example.rickandmorty.common.base.IBaseDiffModel
 import com.google.gson.annotations.SerializedName
+import dagger.hilt.android.AndroidEntryPoint
+
 
 data class Character(
 

@@ -12,8 +12,8 @@ import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.FragmentCharacterBinding
 import com.example.rickandmorty.ui.adapter.CharacterPagingAdapter
 import com.example.rickandmorty.ui.adapter.paging.CommonLoadStateAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 class CharacterFragment : Fragment(R.layout.fragment_character) {
 
     private val viewModel: CharacterViewModel by viewModel()

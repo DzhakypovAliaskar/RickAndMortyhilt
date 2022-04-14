@@ -11,10 +11,9 @@ import com.example.rickandmorty.data.remote.models.Character
 import com.example.rickandmorty.data.remote.pagingsource.CharacterPagingSource
 import javax.inject.Inject
 
-class CharacterRepository(
+class CharacterRepository @Inject constructor(
     private val service: CharacterApi
 ) : BaseRepository(){
-
 
     fun getCharacter(page: Int) = doRequest {
         service.getCharacter(page)

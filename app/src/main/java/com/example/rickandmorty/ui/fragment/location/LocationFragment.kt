@@ -1,12 +1,11 @@
 package com.example.rickandmorty.ui.fragment.location
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import com.example.rickandmorty.R
@@ -19,7 +18,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class LocationFragment : Fragment(R.layout.fragment_location) {
 
     private lateinit var binding: FragmentLocationBinding
-    private val locationAdapter : LocationPagingAdapter = LocationPagingAdapter()
+    private val locationAdapter: LocationPagingAdapter = LocationPagingAdapter()
     private val viewModel: LocationViewModel by viewModel()
 
 
@@ -38,19 +37,19 @@ class LocationFragment : Fragment(R.layout.fragment_location) {
     }
 
     private fun setupRequests() {
-        viewModel.getLocations().observe(this){
+        viewModel.getLocations().observe(this) {
             lifecycleScope.launchWhenStarted {
                 locationAdapter.submitData(it)
             }
         }
     }
 
-    private fun setupRecycler()  = with(binding.locationRecycler){
-        adapter = locationAdapter.withLoadStateFooter(CommonLoadStateAdapter{
+    private fun setupRecycler() = with(binding.locationRecycler) {
+        adapter = locationAdapter.withLoadStateFooter(CommonLoadStateAdapter {
             locationAdapter.retry()
             locationAdapter.refresh()
         })
-        locationAdapter.addLoadStateListener { loadStates->
+        locationAdapter.addLoadStateListener { loadStates ->
             this.isVisible = loadStates.refresh is LoadState.NotLoading
         }
     }
